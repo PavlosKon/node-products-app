@@ -3,6 +3,9 @@ const app = express()
 const port = 3000
 const mongoose = require('mongoose')
 
+const swaggerUI = require('swagger-ui-express')
+const swaggerDocument = require('./swagger')
+
 app.use(express.json())
 
 mongoose.connect(process.env.MONGODB_URI)   // Apo tin 20+ mporoume apla na valouem ena flag sto .env
@@ -19,6 +22,11 @@ const userProduct = require('./routes/user.products.route.js')
 
 app.use('/api/users', user)  //middleware otan paei /user na kalesei ta functions tou const user
 app.use('/api/user-products', userProduct)
+
+app.use('/api-docs',
+    swaggerUI.serve,
+    swaggerUI.setup(swaggerDocument.options)
+)
 
 app.listen(port, () => {
     console.log("Server is up")
