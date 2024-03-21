@@ -192,7 +192,7 @@ exports.options = {
             "delete": {
                 "tags":["Users"],
                 "description": "Delete a user",
-                "parameter": [
+                "parameters": [
                     {
                         "name": "username",
                         "in": "path",
