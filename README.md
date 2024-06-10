@@ -1,1 +1,1 @@
-# node-products-app
+A simple products app using Node and Swagger.
