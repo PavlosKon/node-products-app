@@ -1,1 +1,1 @@
-A simple products app using Node and Swagger.
+Products app using Node and Swagger.
